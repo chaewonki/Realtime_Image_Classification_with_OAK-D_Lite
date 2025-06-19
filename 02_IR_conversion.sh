@@ -1,0 +1,1 @@
+mo --saved_model_dir ./hand_model --output_dir "./" --compress_to_fp16 --scale 255 --source_layout nhwc --target_layout nchw --input_shape "[1,224,224,3]" --use_legacy_frontend
