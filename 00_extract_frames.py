@@ -2,8 +2,9 @@
 import cv2
 import os
 
-bodypart="LAT" # 파일 이름
-output_dir = f"bodyparts/{bodypart}"
+bodypart="LAT" 
+category="bodyparts"
+output_dir = f"{category}/{bodypart}"
 
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)

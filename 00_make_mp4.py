@@ -2,6 +2,8 @@
 import cv2
 import depthai as dai
 
+name = "TEST"
+
 pipeline = dai.Pipeline()
 
 camRgb = pipeline.createColorCamera()
@@ -22,7 +24,7 @@ with dai.Device(pipeline) as device:
         
         if key == ord('s'):
             print("Start recording")
-            video_writer = cv2.VideoWriter("LAT.mp4", 
+            video_writer = cv2.VideoWriter(f"{name}.mp4", 
                                            cv2.VideoWriter_fourcc(*'mp4v'), # mp4 코덱
                                            30,                              # 프레임 수
                                            (300,300))                       # preview 디폴트 사이즈
