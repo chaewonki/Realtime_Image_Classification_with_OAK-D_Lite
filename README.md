@@ -4,19 +4,11 @@ An end-to-end reference pipeline that records camera data, prepares an image dat
 
 The checked-in example is configured as a two-class orientation classifier (`LAT` and `PA`). The same pipeline can be adapted to other classes by changing the dataset folders, output layer, and inference labels.
 
-## Pipeline
+## Pipeline overview
 
-```mermaid
-flowchart LR
-    A[OAK-D Lite video] --> B[MP4 recording]
-    B --> C[Frame extraction]
-    C --> D[Folder-based dataset]
-    D --> E[MobileNetV2 training]
-    E --> F[TensorFlow SavedModel]
-    F --> G[OpenVINO IR]
-    G --> H[FP16 Blob]
-    H --> I[OAK-D Lite inference]
-```
+![OAK-D Lite pipeline from camera capture through MobileNetV2 training and OpenVINO deployment](docs/pipeline-overview.svg)
+
+The diagram follows the checked-in script sequence. It is an architecture overview; it does not represent a fabricated device result or accuracy claim.
 
 ## What this project demonstrates
 
@@ -95,7 +87,7 @@ The current conversion scripts target the legacy OpenVINO Model Optimizer flow a
 
 - File paths and class names are currently configured in the scripts.
 - Model quality depends on dataset size, diversity, lighting, and camera position.
-- Trained weights and benchmark results are not included, so this repository does not claim a fixed accuracy.
+- Trained weights, benchmark results, and a current hardware-output capture are not included, so this repository does not claim a fixed accuracy or present an unverified inference screenshot.
 - This is a research and portfolio prototype, not a certified clinical system.
 
 ## Privacy
